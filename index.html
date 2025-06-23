@@ -180,6 +180,109 @@
                 height: 30px;
             }
         }
+
+                        footer {
+    background-color: #141414;
+    color: white;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to bottom, rgba(28, 28, 28, 1) 0%, rgba(28, 28, 28, 0) 100%);
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #bbb;
+    transition: color 0.3s;
+    font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+    color: white;
+}
+
+.contact-list img {
+    width: 16px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a img {
+    width: 24px;
+    transition: opacity 0.3s;
+}
+
+.social-icons a img:hover {
+    opacity: 0.7;
+}
+
+/* Agar footer tetap responsif di layar kecil */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -523,6 +626,44 @@
             </div>
         </a>
     </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+            <h3>Tentang Kami</h3>
+            <ul>
+                <li><a href="https://www.umt6174.site/tentang-umt">Tentang UMT</a></li>
+            </ul>
+            </div>
+        <div class="footer-section">
+            <h3>Produk UMT</h3>
+            <ul>
+                <li><a href="https://www.umt6174.site/umt-lab">UMT Lab</a></li>
+                <li><a href="https://www.umt6174.site/materi-belajar">Materi Pembelajaran</a></li>
+                <li><a href="https://www.umt6174.site/video-pembelajaran">Video Pembelajaran</a></li>
+                <li><a href="https://www.umt6174.site/tryout-umt">Tryout</a></li>
+                <li><a href="https://www.umt6174.site/tanya-umt">TanyaUMT</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Punya Pertanyaan?</h3>
+          <ul class="contact-list">
+              <li><a href="https://ig.me/m/umt.6174"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">@umt.6174</a></li>
+              <li><a href="mailto:business@gradient.academy"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"> umt.math.6174@gmail.com</a></li>
+              <li><a href="https://wa.me/6282189524610"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"> +6282189524610</a></li>
+          </ul>
+        </div>
+        </div>
+        <div class="footer-bottom">
+        <p>© 2025 UMT Academy. All rights reserved.</p>
+        <div class="social-icons">
+          <a href="https://youtube.com/@umt6174?si=Cdivet0_By8EWJ8v"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+          <a href="https://www.instagram.com/umt.6174/"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+          <a href="https://www.tiktok.com/@umt6174?is_from_webapp=1&sender_device=pc"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok"></a>
+        </div>
+        </div>
+    </footer>
+
     <script>
     // Fungsi untuk mengecek apakah localStorage tersedia
     function isLocalStorageAvailable() {
