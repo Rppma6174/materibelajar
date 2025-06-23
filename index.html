@@ -205,13 +205,17 @@ footer::before {
 .footer-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
+    align-items: center;
+    margin: 20px;
 }
 
 .footer-section {
     flex: 1;
     min-width: 250px;
+    
+    justify-content: center;
 }
 
 .footer-section h3 {
@@ -282,7 +286,15 @@ footer::before {
         gap: 10px;
     }
 }
+.content.active {
+    margin: 0px 20px 0px 20px;
+}
 
+@media (max-width: 480px) {
+    .recent-materials {
+        margin: 30px 10px 10px 10px
+    }
+}
     </style>
 </head>
 <body>
