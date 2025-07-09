@@ -229,7 +229,7 @@ body {
 
         .content {
             display: none;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
             padding: 20px;
         }
@@ -877,8 +877,8 @@ img {
         <div class="filter-tab active" onclick="showContent(event,'kelas10')">Materi Kelas X</div>
         <div class="filter-tab" onclick="showContent(event,'kelas11')">Materi Kelas XI</div>
         <div class="filter-tab" onclick="showContent(event,'kelas12')">Materi Kelas XII</div>
-        <div class="filter-tab" onclick="showContent(event,'kelas9')">Materi Kelas IX</div>
-        <div class="filter-tab" onclick="showContent(event,'kelas8')">Materi Kelas VIII</div>
+        <!-- <div class="filter-tab" onclick="showContent(event,'kelas9')">Materi Kelas IX</div>
+        <div class="filter-tab" onclick="showContent(event,'kelas8')">Materi Kelas VIII</div> -->
         <div class="filter-tab" onclick="showContent(event,'kelas7')">Materi Kelas VII</div>
     </div>
 
@@ -891,8 +891,8 @@ img {
             <div class="dropdown-item active" onclick="selectClass(this, 'kelas-x', 'Kelas X')">Materi Kelas X</div>
             <div class="dropdown-item" onclick="selectClass(this, 'kelas-xi', 'Kelas XI')">Materi Kelas XI</div>
             <div class="dropdown-item" onclick="selectClass(this, 'kelas-xii', 'Kelas XII')">Materi Kelas XII</div>
-            <div class="dropdown-item" onclick="selectClass(this, 'kelas-ix', 'Kelas IX')">Materi Kelas IX</div>
-            <div class="dropdown-item" onclick="selectClass(this, 'kelas-viii', 'Kelas VIII')">Materi Kelas VIII</div>
+            <!-- <div class="dropdown-item" onclick="selectClass(this, 'kelas-ix', 'Kelas IX')">Materi Kelas IX</div>
+            <div class="dropdown-item" onclick="selectClass(this, 'kelas-viii', 'Kelas VIII')">Materi Kelas VIII</div> -->
             <div class="dropdown-item" onclick="selectClass(this, 'kelas-vii', 'Kelas VII')">Materi Kelas VII</div>
         </div>
     </div>
@@ -905,15 +905,92 @@ img {
     </div>
 
     <div id="kelas7" class="content">
-        <h1>Materi Belum Tersedia</h1>
+        <a href="https://drive.google.com/file/d/1zK2Cf2aOJTWHvwcBfyFfrtorkNsGr-fp/view?usp=drive_link" target="_blank" onclick="saveToHistory('Himpunan', 'https://imgur.com/8qAfF6X.png', 'Kelas 7')">
+            <div class="card" data-title="Himpunan">
+                <img src="https://imgur.com/8qAfF6X.png">
+                <div class="card-title">Himpunan</div>
+            </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1uM1xL3j4uCeZB2LeHppCe3n6jSXu2eSc/view?usp=drive_link" target="_blank" onclick="saveToHistory('Aritmetika Sosial', 'https://imgur.com/qaA93K7.png', 'Kelas 7')">
+            <div class="card" data-title="Aritmetika Sosial">
+                <img src="https://imgur.com/qaA93K7.png">
+                <div class="card-title">Aritmetika Sosial</div>
+            </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1gc3RwyFRtjsoTfhBw28Nae-x7Oe7wgl4/view?usp=drive_link" target="_blank" onclick="saveToHistory('PLSV & PTLSV', 'https://imgur.com/8TLnRnB.png', 'Kelas 7')">
+            <div class="card" data-title="PLSV & PTLSV">
+                <img src="https://imgur.com/8TLnRnB.png">
+                <div class="card-title">Persamaan & Pertidaksamaan Linear Satu Variabel</div>
+            </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1XJITZBhz4EWfceB8r2ZIjugxem1qpwZQ/view?usp=drive_link" target="_blank" onclick="saveToHistory('Pecahan 1', 'https://imgur.com/dQ5SpZj.png', 'Kelas 7')">
+            <div class="card" data-title="Pecahan 1">
+                <img src="https://imgur.com/dQ5SpZj.png">
+                <div class="card-title">Pecahan 1</div>
+            </div>
+        </a>
+        <a href="https://drive.google.com/file/d/14yvDIsCJ9MarZlLzeOgkZpGxVtcypKnF/view?usp=drive_link" target="_blank" onclick="saveToHistory('Pecahan 2', 'https://imgur.com/16IjqkX.png', 'Kelas 7')">
+            <div class="card" data-title="Pecahan 2">
+                <img src="https://imgur.com/16IjqkX.png">
+                <div class="card-title">Pecahan 2</div>
+            </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1YOV-WN6cHNyT0r6POLtnS8bbmLGOzIHG/view?usp=drive_link" target="_blank" onclick="saveToHistory('Bilangan Bulat', 'https://imgur.com/gMy7SHk.png', 'Kelas 7')">
+            <div class="card" data-title="Bilangan Bulat">
+                <img src="https://imgur.com/gMy7SHk.png">
+                <div class="card-title">Bilangan Bulat</div>
+            </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1pCUTqwFnyVthxIXZhKMUMCJvk5M5CMxW/view?usp=drive_link" target="_blank" onclick="saveToHistory('Garis & Sudut', 'https://imgur.com/4mnKfSu.png', 'Kelas 7')">
+            <div class="card" data-title="Garis & Sudut">
+                <img src="https://imgur.com/4mnKfSu.png">
+                <div class="card-title">Garis & Sudut</div>
+            </div>
+        </a>
+        <a href="https://drive.google.com/file/d/18EwZKrg7-OgLq9BmL2KmZp0qa8YncrFG/view?usp=drive_link" target="_blank" onclick="saveToHistory('Bentuk Akar', 'https://imgur.com/SwhGbhn.png', 'Kelas 7')">
+            <div class="card" data-title="Bentuk Akar">
+                <img src="https://imgur.com/SwhGbhn.png">
+                <div class="card-title">Bentuk Akar</div>
+            </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1ptVb2pMt6SjX2HOcM2PZOJmpra3JIhcH/view?usp=drive_link" target="_blank" onclick="saveToHistory('Eksponen (Perpangkatan)', 'https://imgur.com/VUz5cAk.png', 'Kelas 7')">
+            <div class="card" data-title="Eksponen (Perpangkatan)">
+                <img src="https://imgur.com/VUz5cAk.png">
+                <div class="card-title">Eksponen (Perpangkatan)</div>
+            </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1WMz86ypsNDsix694quSXMqoYxRA8W8Jn/view?usp=drive_link" target="_blank" onclick="saveToHistory('Bentuk Aljabar', 'https://imgur.com/nRAc1Rl.png', 'Kelas 7')">
+            <div class="card" data-title="Bentuk Aljabar">
+                <img src="https://imgur.com/nRAc1Rl.png">
+                <div class="card-title">Bentuk Aljabar</div>
+            </div>
+        </a>
+        <a href="https://drive.google.com/file/d/15VexpUOC9niRpJYgdPKzmobcW4-zhV3w/view?usp=drive_link" target="_blank" onclick="saveToHistory('FPB & KPK', 'https://imgur.com/rE4BSPy.png', 'Kelas 7')">
+            <div class="card" data-title="FPB & KPK">
+                <img src="https://imgur.com/rE4BSPy.png">
+                <div class="card-title">FPB & KPK</div>
+            </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1FfllYEyf85pB4Dx1eNa4cMfKxdJMbJ2A/view?usp=drive_link" target="_blank" onclick="saveToHistory('Perbandingan', 'https://imgur.com/zO9QV2v.png', 'Kelas 7')">
+            <div class="card" data-title="Perbandingan">
+                <img src="https://imgur.com/zO9QV2v.png">
+                <div class="card-title">Perbandingan</div>
+            </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1egoIHxA4p0RQTKlOv28GtH9rvcJbSgEl/view?usp=drive_link" target="_blank" onclick="saveToHistory('Bentuk Aljabar Lanjutan', 'https://imgur.com/8y0dnBu.png', 'Kelas 7')">
+            <div class="card" data-title="Bentuk Aljabar Lanjutan">
+                <img src="https://imgur.com/8y0dnBu.png">
+                <div class="card-title">Bentuk Aljabar Lanjutan</div>
+            </div>
+        </a>
     </div>
 
     <div id="kelas8" class="content">
-        <h1>Materi Belum Tersedia</h1>
+        
     </div>
 
     <div id="kelas9" class="content">
-        <h1>Materi Belum Tersedia</h1>
+        
     </div>
 
     <div id="kelas10" class="content active">
