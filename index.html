@@ -5,12 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Materi Matematika</title>
     <style>
-        body {
+body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #141414;
             color: white;
-            padding-top: 60px;
+            padding-top: 0px;
+            /* Prevent text selection on entire body */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Allow text selection only for content areas where it's needed */
+        .class-description,
+        .subject-description,
+        .recent-info,
+        input,
+        textarea {
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
         }
 
         .breadcrumb {
@@ -21,6 +38,10 @@
             font-size: 14px;
             color: #888;
             margin: 20px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .breadcrumb-arrow {
@@ -32,6 +53,10 @@
             text-decoration: none;
             transition: color 0.3s ease;
             cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .breadcrumb-link:hover {
@@ -58,6 +83,10 @@
             gap: 5px;
             padding: 5px 0;
             transition: color 0.3s ease;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .dropdown-toggle:hover {
@@ -67,6 +96,10 @@
         .dropdown-arrow {
             font-size: 12px;
             transition: transform 0.3s ease;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .dropdown.active .dropdown-arrow {
@@ -103,6 +136,11 @@
             font-size: 14px;
             transition: all 0.3s ease;
             border-bottom: 1px solid #333;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .dropdown-item:last-child {
@@ -124,7 +162,23 @@
             font-weight: 500;
             margin-bottom: 40px;
             color: #ffffff;
-            margin: 0px 20px 30px 20px
+            margin: 0px 20px 30px 20px;
+            text-align: center;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #888;
+            font-size: 1rem;
+            margin: 0px 20px 30px 20px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         a {
@@ -134,6 +188,10 @@
 
         .card-title {
             color: #fff;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .tabs {
@@ -154,6 +212,10 @@
             color: #ccc;
             font-weight: bold;
             transition: color 0.3s;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .tab:hover {
@@ -183,6 +245,10 @@
             text-align: center;
             transition: transform 0.3s;
             position: relative;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .card:hover {
@@ -193,6 +259,11 @@
             width: 100%;
             height: auto;
             display: block;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            pointer-events: none; /* Prevent dragging images */
         }
 
         .card-title {
@@ -216,6 +287,10 @@
             font-size: 10px;
             font-weight: bold;
             z-index: 2;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .recent-materials {
@@ -229,6 +304,10 @@
         .recent-materials h3 {
             margin: 0 0 10px 0;
             color: white;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .recent-item {
@@ -240,6 +319,10 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background 0.3s;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .recent-item:hover {
@@ -252,20 +335,38 @@
             border-radius: 5px;
             margin-right: 10px;
             object-fit: cover;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            pointer-events: none;
         }
 
         .recent-info {
             flex: 1;
+            /* Allow text selection for content */
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
         }
 
         .recent-title {
             font-weight: bold;
             margin-bottom: 2px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .recent-time {
             font-size: 12px;
             color: #aaa;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .clear-history {
@@ -277,22 +378,209 @@
             cursor: pointer;
             font-size: 12px;
             margin-top: 10px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
 
         .clear-history:hover {
             background: #d32f2f;
         }
 
-        @media (max-width: 768px) {
-            .recent-materials {
-                margin: 10px;
-                padding: 10px;
-            }
-            
-            .recent-item img {
-                width: 30px;
-                height: 30px;
-            }
+        /* Desktop Filter Tabs */
+        .filter-tabs {
+            display: flex;
+            gap: 1rem;
+            margin: 0 20px 2rem 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            justify-content: center;
+        }
+        
+        .filter-tab {
+            padding: 1rem 2rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #888;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        .filter-tab.active {
+            border-bottom-color: #4CAF50;
+            color: #4CAF50;
+        }
+
+        .filter-tab:hover {
+            color: white;
+        }
+
+        /* Mobile Dropdown */
+        .mobile-dropdown {
+            display: none;
+            margin: 20px;
+            position: relative;
+        }
+
+        .dropdown-button {
+            width: 100%;
+            background: #333;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .dropdown-button:hover {
+            background: #444;
+        }
+
+        .mobile-dropdown .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            margin-top: 5px;
+        }
+
+        .mobile-dropdown.active .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .mobile-dropdown .dropdown-item {
+            display: block;
+            padding: 15px 20px;
+            color: #ccc;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #333;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .mobile-dropdown .dropdown-item:last-child {
+            border-bottom: none;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .mobile-dropdown .dropdown-item:first-child {
+            border-radius: 8px 8px 0 0;
+        }
+
+        .mobile-dropdown .dropdown-item.active {
+            background: #007bff;
+            color: white;
+        }
+
+        /* Class Content Section */
+        .class-content {
+            background: #2a2a2a;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #444;
+        }
+
+        .class-title {
+            color: #4CAF50;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .class-description {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            /* Allow text selection for content */
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+        }
+
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .subject-card {
+            background: #333;
+            border-radius: 8px;
+            padding: 15px;
+            border-left: 4px solid #4CAF50;
+            transition: all 0.3s ease;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .subject-card:hover {
+            background: #404040;
+            transform: translateY(-2px);
+        }
+
+        .subject-name {
+            color: #4CAF50;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .subject-description {
+            color: #bbb;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            /* Allow text selection for content */
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+        }
+
+        .content.active {
+            margin: 0px 20px 0px 20px;
         }
 
 footer {
@@ -304,6 +592,10 @@ footer {
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 footer::before {
@@ -328,7 +620,6 @@ footer::before {
 .footer-section {
     flex: 1;
     min-width: 250px;
-    
     justify-content: center;
 }
 
@@ -336,6 +627,10 @@ footer::before {
     color: white;
     margin-bottom: 10px;
     font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .footer-section ul {
@@ -352,6 +647,10 @@ footer::before {
     color: #bbb;
     transition: color 0.3s;
     font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .footer-section ul li a:hover {
@@ -362,6 +661,11 @@ footer::before {
     width: 16px;
     vertical-align: middle;
     margin-right: 8px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
 }
 
 .footer-bottom {
@@ -382,10 +686,53 @@ footer::before {
 .social-icons a img {
     width: 24px;
     transition: opacity 0.3s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
 }
 
 .social-icons a img:hover {
     opacity: 0.7;
+}
+
+/* Prevent text selection and image dragging globally */
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Allow text selection only for specific content areas */
+input,
+textarea,
+.class-description,
+.subject-description,
+.recent-info,
+[contenteditable="true"] {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+/* Prevent image dragging */
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    /* -user-drag: none; */
+    pointer-events: none;
+}
+
+/* Allow pointer events for clickable images */
+.clickable-image {
+    pointer-events: auto;
 }
 
 /* Agar footer tetap responsif di layar kecil */
@@ -400,6 +747,7 @@ footer::before {
         gap: 10px;
     }
 }
+
 .content.active {
     margin: 0px 20px 0px 20px;
 }
@@ -407,6 +755,94 @@ footer::before {
 @media (max-width: 480px) {
     .recent-materials {
         margin: 30px 10px 10px 10px
+    }
+}
+
+.filter-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 16px
+}
+
+.filter-tab {
+    padding: 1rem 0;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-tab.active {
+    border-bottom-color: #4285f4;
+    color: #4285f4;
+}
+
+@media (max-width: 768px) {
+    .filter-tabs {
+        display: none; /* Sembunyikan filter tabs di layar kecil */
+    }
+    .tab-nav {
+        display: none;
+    }
+    
+    .mobile-dropdown {
+        display: block;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .content-area {
+        padding: 20px;
+    }
+    
+    .content-title {
+        font-size: 1.5rem;
+    }
+    
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-tabs {
+        display: none; /* Sembunyikan filter tabs di layar kecil */
+    }
+    .tab-button {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+        min-width: 70px;
+    }
+    
+    .header h1 {
+        font-size: 1.7rem;
+    }
+    
+    .content-area {
+        padding: 15px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 360px) {
+    .filter-tabs {
+        display: none; /* Sembunyikan filter tabs di layar kecil */
+    }
+    .tab-button {
+        padding: 10px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
     }
 }
     </style>
@@ -437,10 +873,28 @@ footer::before {
 
     <h1>Materi Pembelajaran</h1>
 
-    <div class="tabs">
-        <div class="tab active" onclick="showContent(event,'kelas10')">Materi Kelas X</div>
-        <div class="tab" onclick="showContent(event,'kelas11')">Materi Kelas XI</div>
-        <div class="tab" onclick="showContent(event,'kelas12')">Materi Kelas XII</div>
+    <div class="filter-tabs">
+        <div class="filter-tab active" onclick="showContent(event,'kelas10')">Materi Kelas X</div>
+        <div class="filter-tab" onclick="showContent(event,'kelas11')">Materi Kelas XI</div>
+        <div class="filter-tab" onclick="showContent(event,'kelas12')">Materi Kelas XII</div>
+        <div class="filter-tab" onclick="showContent(event,'kelas9')">Materi Kelas IX</div>
+        <div class="filter-tab" onclick="showContent(event,'kelas8')">Materi Kelas VIII</div>
+        <div class="filter-tab" onclick="showContent(event,'kelas7')">Materi Kelas VII</div>
+    </div>
+
+    <div class="mobile-dropdown">
+        <button class="dropdown-button" onclick="toggleDropdown()">
+            <span id="selected-class">Kelas X</span>
+            <span class="dropdown-arrow">▼</span>
+        </button>
+        <div class="dropdown-menu" id="dropdown-menu">
+            <div class="dropdown-item active" onclick="selectClass(this, 'kelas-x', 'Kelas X')">Materi Kelas X</div>
+            <div class="dropdown-item" onclick="selectClass(this, 'kelas-xi', 'Kelas XI')">Materi Kelas XI</div>
+            <div class="dropdown-item" onclick="selectClass(this, 'kelas-xii', 'Kelas XII')">Materi Kelas XII</div>
+            <div class="dropdown-item" onclick="selectClass(this, 'kelas-ix', 'Kelas IX')">Materi Kelas IX</div>
+            <div class="dropdown-item" onclick="selectClass(this, 'kelas-viii', 'Kelas VIII')">Materi Kelas VIII</div>
+            <div class="dropdown-item" onclick="selectClass(this, 'kelas-vii', 'Kelas VII')">Materi Kelas VII</div>
+        </div>
     </div>
 
     <!-- Section untuk menampilkan materi yang baru dibuka -->
@@ -448,6 +902,18 @@ footer::before {
         <h3>📚 Materi Terakhir Dibuka</h3>
         <div id="recentList"></div>
         <button class="clear-history" onclick="clearHistory()">Hapus Riwayat</button>
+    </div>
+
+    <div id="kelas7" class="content">
+        <h1>Materi Belum Tersedia</h1>
+    </div>
+
+    <div id="kelas8" class="content">
+        <h1>Materi Belum Tersedia</h1>
+    </div>
+
+    <div id="kelas9" class="content">
+        <h1>Materi Belum Tersedia</h1>
     </div>
 
     <div id="kelas10" class="content active">
@@ -816,156 +1282,199 @@ footer::before {
             </div>
     </footer>
     <script>
-    // Fungsi untuk mengecek apakah localStorage tersedia
-    function isLocalStorageAvailable() {
-        try {
-            const testKey = '__test__';
-            localStorage.setItem(testKey, testKey);
-            localStorage.removeItem(testKey);
-            return true;
-        } catch (e) {
-            console.warn("localStorage tidak tersedia.");
-            return false;
-        }
-    }
-
-    // Fungsi untuk menampilkan konten berdasarkan tab
-    function showContent(e, id) {
-        document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.getElementById(id).classList.add('active');
-        e.currentTarget.classList.add('active');
-    }
-
-    // Fungsi untuk menyimpan riwayat materi yang dibuka
-    function saveToHistory(title, image, grade) {
-        if (!isLocalStorageAvailable()) {
-            console.warn("Tidak dapat menyimpan riwayat: localStorage tidak tersedia.");
-            return;
-        }
-
-        const now = new Date();
-        const historyItem = {
-            title: title,
-            image: image,
-            grade: grade,
-            timestamp: now.getTime(),
-            timeString: formatTime(now)
-        };
-
-        let history = JSON.parse(localStorage.getItem('mathHistory') || '[]');
-        history = history.filter(item => item.title !== title);
-        history.unshift(historyItem);
-        history = history.slice(0, 10);
-        localStorage.setItem('mathHistory', JSON.stringify(history));
-        displayHistory();
-    }
-
-    // Fungsi untuk menampilkan riwayat
-    function displayHistory() {
-        const history = JSON.parse(localStorage.getItem('mathHistory') || '[]');
-        const recentMaterials = document.getElementById('recentMaterials');
-        const recentList = document.getElementById('recentList');
-
-        if (history.length === 0) {
-            recentMaterials.style.display = 'none';
-            return;
-        }
-
-        recentMaterials.style.display = 'block';
-        recentList.innerHTML = '';
-
-        history.forEach((item, index) => {
-            const recentItem = document.createElement('div');
-            recentItem.className = 'recent-item';
-            recentItem.innerHTML = `
-                <img src="${item.image}" alt="${item.title}">
-                <div class="recent-info">
-                    <div class="recent-title">${item.title}</div>
-                    <div class="recent-time">${item.grade} • ${item.timeString}</div>
-                </div>
-            `;
-
-            // Ganti addEventListener dengan onclick karena mungkin tidak didukung penuh
-            recentItem.style.cursor = "pointer";
-            recentItem.onclick = function () {
-                const allLinks = document.querySelectorAll('a[target="_blank"]');
-                for (const link of allLinks) {
-                    const cardTitle = link.querySelector('.card-title');
-                    if (cardTitle && cardTitle.textContent.trim() === item.title) {
-                        window.open(link.href, '_blank');
-                        break;
-                    }
-                }
-            };
-
-            recentList.appendChild(recentItem);
-        });
-
-        highlightRecentlyOpened(history);
-    }
-
-    // Fungsi untuk menandai materi yang baru dibuka
-    function highlightRecentlyOpened(history) {
-        document.querySelectorAll('.card').forEach(card => {
-            card.classList.remove('recently-opened');
-            const badge = card.querySelector('.recent-badge');
-            if (badge) badge.remove();
-        });
-
-        const recentTitles = history.slice(0, 3).map(item => item.title);
-
-        document.querySelectorAll('.card').forEach(card => {
-            const title = card.getAttribute && card.getAttribute('data-title');
-            if (title && recentTitles.includes(title)) {
-                card.classList.add('recently-opened');
-                const badge = document.createElement('div');
-                badge.className = 'recent-badge';
-                badge.textContent = 'Baru';
-                card.appendChild(badge);
-            }
-        });
-    }
-
-    // Fungsi untuk memformat waktu
-    function formatTime(date) {
-        const now = new Date();
-        const diffMs = now - date;
-        const diffMins = Math.floor(diffMs / 60000);
-        const diffHours = Math.floor(diffMs / 3600000);
-        const diffDays = Math.floor(diffMs / 86400000);
-
-        if (diffMins < 1) return 'Baru saja';
-        if (diffMins < 60) return `${diffMins} menit lalu`;
-        if (diffHours < 24) return `${diffHours} jam lalu`;
-        if (diffDays < 7) return `${diffDays} hari lalu`;
-
-        return date.toLocaleDateString('id-ID', { 
-            day: 'numeric', 
-            month: 'short', 
-            year: 'numeric' 
-        });
-    }
-
-    // Fungsi untuk menghapus riwayat
-    function clearHistory() {
-        // Langsung hapus riwayat tanpa konfirmasi
-        localStorage.removeItem('mathHistory');
-        displayHistory();
-    }
-
-    // Debugging error JS
-    window.onerror = function(message, source, lineno, colno, error) {
-        console.error("Error JS:", message, "di", source, "baris", lineno);
+// Fungsi untuk mengecek apakah localStorage tersedia
+function isLocalStorageAvailable() {
+    try {
+        const testKey = '__test__';
+        localStorage.setItem(testKey, testKey);
+        localStorage.removeItem(testKey);
         return true;
+    } catch (e) {
+        console.warn("localStorage tidak tersedia.");
+        return false;
+    }
+}
+
+// Fungsi untuk menampilkan konten berdasarkan tab
+function showContent(e, id) {
+    document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    e.currentTarget.classList.add('active');
+}
+
+// FUNGSI DROPDOWN MOBILE YANG DIPERBAIKI
+function toggleDropdown() {
+    const dropdown = document.querySelector('.mobile-dropdown');
+    dropdown.classList.toggle('active');
+}
+
+function selectClass(element, classId, className) {
+    // Update tampilan dropdown
+    document.getElementById('selected-class').textContent = className;
+    
+    // Update active state di dropdown items
+    document.querySelectorAll('.mobile-dropdown .dropdown-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    element.classList.add('active');
+    
+    // Tutup dropdown
+    document.querySelector('.mobile-dropdown').classList.remove('active');
+    
+    // Mapping nama class ke ID yang benar
+    const classMapping = {
+        'kelas-x': 'kelas10',
+        'kelas-xi': 'kelas11',
+        'kelas-xii': 'kelas12',
+        'kelas-ix': 'kelas9',
+        'kelas-viii': 'kelas8',
+        'kelas-vii': 'kelas7'
+    };
+    
+    // Tampilkan konten yang sesuai
+    const actualClassId = classMapping[classId] || classId;
+    document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+    document.getElementById(actualClassId).classList.add('active');
+}
+
+// Tutup dropdown ketika klik di luar
+document.addEventListener('click', function(e) {
+    const dropdown = document.querySelector('.mobile-dropdown');
+    if (dropdown && !dropdown.contains(e.target)) {
+        dropdown.classList.remove('active');
+    }
+});
+
+function saveToHistory(title, image, grade) {
+    if (!isLocalStorageAvailable()) {
+        console.warn("Tidak dapat menyimpan riwayat: localStorage tidak tersedia.");
+        return;
+    }
+
+    const now = new Date();
+    const historyItem = {
+        title: title,
+        image: image,
+        grade: grade,
+        timestamp: now.getTime(),
+        timeString: formatTime(now)
     };
 
-    // Jalankan setelah DOM siap
-    document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(displayHistory, 500); // Delay kecil jika konten belum siap
+    let history = JSON.parse(localStorage.getItem('mathHistory') || '[]');
+    history = history.filter(item => item.title !== title);
+    history.unshift(historyItem);
+    history = history.slice(0, 10);
+    localStorage.setItem('mathHistory', JSON.stringify(history));
+    displayHistory();
+}
+
+// Fungsi untuk menampilkan riwayat
+function displayHistory() {
+    const history = JSON.parse(localStorage.getItem('mathHistory') || '[]');
+    const recentMaterials = document.getElementById('recentMaterials');
+    const recentList = document.getElementById('recentList');
+
+    if (history.length === 0) {
+        recentMaterials.style.display = 'none';
+        return;
+    }
+
+    recentMaterials.style.display = 'block';
+    recentList.innerHTML = '';
+
+    history.forEach((item, index) => {
+        const recentItem = document.createElement('div');
+        recentItem.className = 'recent-item';
+        recentItem.innerHTML = `
+            <img src="${item.image}" alt="${item.title}">
+            <div class="recent-info">
+                <div class="recent-title">${item.title}</div>
+                <div class="recent-time">${item.grade} • ${item.timeString}</div>
+            </div>
+        `;
+
+        // Ganti addEventListener dengan onclick karena mungkin tidak didukung penuh
+        recentItem.style.cursor = "pointer";
+        recentItem.onclick = function () {
+            const allLinks = document.querySelectorAll('a[target="_blank"]');
+            for (const link of allLinks) {
+                const cardTitle = link.querySelector('.card-title');
+                if (cardTitle && cardTitle.textContent.trim() === item.title) {
+                    window.open(link.href, '_blank');
+                    break;
+                }
+            }
+        };
+
+        recentList.appendChild(recentItem);
     });
 
-    const dropdown = document.getElementById('umtDropdown');
+    highlightRecentlyOpened(history);
+}
+
+// Fungsi untuk menandai materi yang baru dibuka
+function highlightRecentlyOpened(history) {
+    document.querySelectorAll('.card').forEach(card => {
+        card.classList.remove('recently-opened');
+        const badge = card.querySelector('.recent-badge');
+        if (badge) badge.remove();
+    });
+
+    const recentTitles = history.slice(0, 3).map(item => item.title);
+
+    document.querySelectorAll('.card').forEach(card => {
+        const title = card.getAttribute && card.getAttribute('data-title');
+        if (title && recentTitles.includes(title)) {
+            card.classList.add('recently-opened');
+            const badge = document.createElement('div');
+            badge.className = 'recent-badge';
+            badge.textContent = 'Baru';
+            card.appendChild(badge);
+        }
+    });
+}
+
+// Fungsi untuk memformat waktu
+function formatTime(date) {
+    const now = new Date();
+    const diffMs = now - date;
+    const diffMins = Math.floor(diffMs / 60000);
+    const diffHours = Math.floor(diffMs / 3600000);
+    const diffDays = Math.floor(diffMs / 86400000);
+
+    if (diffMins < 1) return 'Baru saja';
+    if (diffMins < 60) return `${diffMins} menit lalu`;
+    if (diffHours < 24) return `${diffHours} jam lalu`;
+    if (diffDays < 7) return `${diffDays} hari lalu`;
+
+    return date.toLocaleDateString('id-ID', { 
+        day: 'numeric', 
+        month: 'short', 
+        year: 'numeric' 
+    });
+}
+
+// Fungsi untuk menghapus riwayat
+function clearHistory() {
+    // Langsung hapus riwayat tanpa konfirmasi
+    localStorage.removeItem('mathHistory');
+    displayHistory();
+}
+
+// Debugging error JS
+window.onerror = function(message, source, lineno, colno, error) {
+    console.error("Error JS:", message, "di", source, "baris", lineno);
+    return true;
+};
+
+// Jalankan setelah DOM siap
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(displayHistory, 500); // Delay kecil jika konten belum siap
+});
+
+// Dropdown breadcrumb
+const dropdown = document.getElementById('umtDropdown');
 const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
 
 dropdownToggle.addEventListener('click', (e) => {
@@ -984,6 +1493,7 @@ document.addEventListener('click', (e) => {
 dropdown.querySelector('.dropdown-menu').addEventListener('click', (e) => {
     e.stopPropagation();
 });
+
 
     </script>
 </body>
